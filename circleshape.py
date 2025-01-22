@@ -2,6 +2,9 @@ import pygame
 
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
+
+    white = (255, 255, 255)
+
     def __init__(self, x, y, radius):
         # we will be using this later
         if hasattr(self, "containers"):
@@ -14,8 +17,12 @@ class CircleShape(pygame.sprite.Sprite):
         self.radius = radius
 
     def draw(self, screen):
-        # sub-classes must override
-        pass
+        pygame.draw.polygon(
+            screen,               # Screen object
+            self.white,           # Color (white)
+            self.triangle(),      # List of points (triangle vertices)
+            2                     # Line width
+        )
 
     def update(self, dt):
         # sub-classes must override
