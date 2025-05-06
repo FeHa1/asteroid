@@ -29,10 +29,7 @@ class CircleShape(pygame.sprite.Sprite):
 
 
     def check_collision(self, other):
-        """
-        Check if this circle collides with another CircleShape.
-        Returns True if they collide, otherwise False.
-        """
-        distance = self.position.distance_to(other.position)
         
+        distance = self.position.distance_to(other.position)
+
         return distance <= (self.radius + other.radius)
