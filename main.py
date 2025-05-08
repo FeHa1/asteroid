@@ -30,7 +30,7 @@ def main():
     dt = 0
 
 
-    while (True): 
+    while (True):
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #for closing the window
                 return
