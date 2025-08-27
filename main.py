@@ -38,20 +38,20 @@ def main():
         screen.fill(black)
         updatable.update(dt)
 
+        # Colision player-asteroid
         for asteroid in asteroids:
             if player.check_collision(asteroid):
                 print("Game over!")
                 pygame.quit()
                 return  
             
-        # Colisión disparo-asteroide
+        # Colisión shot-asteroid
         for shot in shots:
             for asteroid in asteroids:
                 if shot.check_collision(asteroid):
-                    # Destruir tanto el disparo como el asteroide
                     shot.kill()
                     asteroid.kill()
-                    break  # Salir del bucle interno para evitar errores
+                    break 
      
         for sprite in drawable:
             sprite.draw(screen)
