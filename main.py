@@ -43,6 +43,15 @@ def main():
                 print("Game over!")
                 pygame.quit()
                 return  
+            
+        # Colisión disparo-asteroide
+        for shot in shots:
+            for asteroid in asteroids:
+                if shot.check_collision(asteroid):
+                    # Destruir tanto el disparo como el asteroide
+                    shot.kill()
+                    asteroid.kill()
+                    break  # Salir del bucle interno para evitar errores
      
         for sprite in drawable:
             sprite.draw(screen)
