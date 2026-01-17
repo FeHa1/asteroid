@@ -33,7 +33,7 @@ python main.py
 
 **State Management**: Clean game loop with proper sprite cleanup and restart logic.
 
-## 📁 Structure
+## Structure
 
 ```
 main.py           # Game loop, scoring, game over
